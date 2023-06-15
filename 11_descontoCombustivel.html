@@ -1,25 +1,57 @@
 <script>
-    /*
-    //PROBLEMA
-    Um posto está vendendo combustíveis com a seguinte tabela de descontos:
-    Álcool:
-    - até 20 litros, desconto de 3% por litro
-    - acima de 20 litros, desconto de 5% por litro
+  /*
+  //PROBLEMA
+  Um posto está vendendo combustíveis com a seguinte tabela de descontos:
+  Álcool:
+  - até 20 litros, desconto de 3% por litro
+  - acima de 20 litros, desconto de 5% por litro
 
-    Gasolina:
-    - até 20 litros, desconto de 4% por litro
-    - acima de 20 litros, desconto de 6% por litro
-    
-    Escreva um algoritmo que leia o número de litros vendidos, o tipo de combustível (codificado da seguinte forma: A-álcool, G-gasolina), calcule e imprima o valor a ser pago pelo cliente sabendo-se que o preço do litro da gasolina é R$ 6,50 o preço do litro do álcool é R$ 6,10.
-    */
+  Gasolina:
+  - até 20 litros, desconto de 4% por litro
+  - acima de 20 litros, desconto de 6% por litro
+  
+  Escreva um algoritmo que leia o número de litros vendidos, o tipo de combustível (codificado da seguinte forma: A-álcool, G-gasolina), calcule e imprima o valor a ser pago pelo cliente sabendo-se que o preço do litro da gasolina é R$ 6,50 o preço do litro do álcool é R$ 6,10.
+  */
 
-    //ENTRADA
+  //ENTRADA
+  const comb = prompt("qual o tipo do combustivel? A-álcool ou G-gasolina").trim().toUpperCase();
+  const litro = Number(prompt("quantos litros você comprou").trim().toUpperCase());
 
 
-    //PROCESSAMENTO
+  //PROCESSAMENTO
+  const gas = 6.50
+  const alc = 6.10
 
-    
-    //SAÍDA
-
+  
+  //SAÍDA
+  if(comb == "A"){
+      if(litro > 20){
+          const combA = alc * litro 
+          const combA2 = combA * 0.05
+          const combA3 = combA - combA2
+          alert(`voce pagará R$ ${combA3.toFixed(2)}`)
+      }
+      else{
+          const combA = alc * litro 
+          const combA2 = combA * 0.03
+          const combA3 = combA - combA2
+          alert(`voce pagará R$ ${combA3.toFixed(2)}`)
+      }
+  }
+  else  if(comb == "G"){
+        if(litro > 20){
+            const combG = gas * litro 
+            const combG2 = combG * 0.06
+            const combG3 = combG - combG2
+            alert(`voce pagará R$ ${combG3.toFixed(2)}`)
+        }
+        else{
+            const combG = gas * litro 
+            const combG2 = combG * 0.04
+            const combG3 = combG - combG2
+            alert(`voce pagará R$ ${combG3.toFixed(2)}`)
+        }
+    }
+  
 
 </script>
